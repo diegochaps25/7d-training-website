@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="TrainingPeaks">
+  <rect width="120" height="120" rx="16" fill="#FFFFFF"/>
+  <!-- Peak marks in TrainingPeaks orange -->
+  <path d="M18 78 L40 38 L54 58 L72 28 L102 78 Z" fill="#F15A29"/>
+  <path d="M18 78 L40 48 L54 64 L72 42 L102 78 Z" fill="#C2410C" opacity="0.35"/>
+  <text x="60" y="100" text-anchor="middle" fill="#1F2937" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">TrainingPeaks</text>
+</svg>

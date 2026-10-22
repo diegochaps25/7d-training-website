@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors - Updated to New Blue #152ad7 */
+  --color-primary: #152ad7; /* new blue from canva */
+  --color-primary-50: #e8ecfc; /* lighter shade */
+  --color-primary-100: #c5cef8; /* light shade */
+  --color-primary-500: #152ad7; /* main color */
+  --color-primary-600: #1225bd; /* darker shade */
+  --color-primary-700: #0f1fa3; /* dark shade */
+  --color-primary-800: #0c1989; /* darker shade */
+  --color-primary-900: #08125e; /* darkest shade */
+
+  /* Secondary Colors */
+  --color-secondary: #152ad7; /* new blue */
+  --color-secondary-50: #e8ecfc; /* lighter shade */
+  --color-secondary-100: #c5cef8; /* light shade */
+  --color-secondary-500: #152ad7; /* main color */
+  --color-secondary-600: #1225bd; /* darker shade */
+
+  /* Accent Colors - Updated to New Red #c80b33 */
+  --color-accent: #c80b33; /* new red from canva */
+  --color-accent-50: #fce8ed; /* lighter shade */
+  --color-accent-100: #f7c5d2; /* light shade */
+  --color-accent-500: #c80b33; /* main color */
+  --color-accent-600: #b00a2d; /* darker shade */
+  --color-accent-700: #980927; /* dark shade */
+
+  /* Background Colors */
+  --color-background: #FFFFFF; /* white */
+  --color-surface: #F8FAFC; /* slate-50 */
+  --color-surface-100: #F1F5F9; /* slate-100 */
+  --color-surface-200: #E2E8F0; /* slate-200 */
+
+  /* Text Colors */
+  --color-text-primary: #111827; /* gray-900 */
+  --color-text-secondary: #6B7280; /* gray-500 */
+  --color-text-muted: #9CA3AF; /* gray-400 */
+
+  /* Status Colors */
+  --color-success: #059669; /* emerald-600 */
+  --color-success-50: #ECFDF5; /* emerald-50 */
+  --color-success-100: #D1FAE5; /* emerald-100 */
+  --color-success-500: #10B981; /* emerald-500 */
+
+  --color-warning: #D97706; /* amber-600 */
+  --color-warning-50: #FFFBEB; /* amber-50 */
+  --color-warning-100: #FEF3C7; /* amber-100 */
+  --color-warning-500: #F59E0B; /* amber-500 */
+
+  --color-error: #DC2626; /* red-600 */
+  --color-error-50: #FEF2F2; /* red-50 */
+  --color-error-100: #FEE2E2; /* red-100 */
+  --color-error-500: #EF4444; /* red-500 */
+
+  /* Border Colors */
+  --color-border: #E5E7EB; /* gray-200 */
+  --color-border-light: #F3F4F6; /* gray-100 */
+  --color-border-dark: #D1D5DB; /* gray-300 */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent hover:bg-accent-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 ease-in-out shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 ease-in-out;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 ease-in-out;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-100 p-6;
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 ease-in-out p-6;
+  }
+
+  .testimonial-card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-100 p-6 transition-all duration-200 ease-in-out hover:shadow-md;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all duration-200 ease-in-out;
+  }
+
+  .form-input:focus {
+    @apply outline-none ring-2 ring-secondary border-transparent;
+  }
+
+  .section-divider {
+    @apply border-t border-gray-100;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .hero-gradient {
+    @apply bg-gradient-to-br from-primary via-primary-800 to-secondary;
+  }
+
+  .performance-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-success-100 text-success-600;
+  }
+
+  .urgency-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-warning-100 text-warning-600;
+  }
+
+  .trust-badge {
+    @apply inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium bg-primary-50 text-primary-700 border border-primary-100;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
+
+/* Custom animations for performance focus */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-accent {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(200, 11, 51, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(200, 11, 51, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-pulse-accent {
+  animation: pulse-accent 2s infinite;
+}
+
+/* Smooth scrolling for assessment form navigation */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* High contrast focus states for accessibility */
+.focus-visible:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}

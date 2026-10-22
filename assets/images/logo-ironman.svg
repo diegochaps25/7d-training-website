@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="IRONMAN">
+  <rect width="120" height="120" rx="16" fill="#111111"/>
+  <text x="60" y="52" text-anchor="middle" fill="#FFFFFF" font-family="Arial Black, Arial, sans-serif" font-size="22" font-weight="900" letter-spacing="1">IRONMAN</text>
+  <!-- Classic M-Dot mark -->
+  <g transform="translate(60, 82)">
+    <text x="0" y="0" text-anchor="middle" fill="#FFFFFF" font-family="Arial Black, Arial, sans-serif" font-size="34" font-weight="900">M</text>
+    <circle cx="18" cy="-8" r="5" fill="#FFFFFF"/>
+  </g>
+</svg>
