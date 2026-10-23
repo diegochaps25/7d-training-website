@@ -8,33 +8,322 @@
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style>
+        section[id] {
+            scroll-margin-top: var(--site-nav-height, 4rem);
+        }
+
+        #site-nav {
+            z-index: 10000;
+        }
+
+        .site-nav-inner {
+            min-height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .site-nav-brand {
+            display: flex;
+            align-items: center;
+            min-width: 0;
+            text-decoration: none;
+        }
+
+        .site-nav-brand img {
+            height: 2.5rem;
+            width: auto;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .site-nav-brand span {
+            white-space: nowrap;
+        }
+
+        .site-nav-desktop {
+            display: none;
+        }
+
+        .site-nav-desktop a {
+            color: #6b7280;
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.25rem;
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 0.35rem 0;
+        }
+
+        .site-nav-desktop a:hover,
+        .site-nav-desktop a:focus-visible {
+            color: #1e3a8a;
+        }
+
+        .site-nav-podium {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-height: 44px;
+            padding: 0.65rem 1.1rem;
+            border-radius: 0.5rem;
+            background-color: rgba(239, 13, 61, 1);
+            color: #ffffff !important;
+            font-weight: 700;
+            line-height: 1.2;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(239, 13, 61, 0.25);
+            transition: background-color 160ms ease, transform 160ms ease;
+        }
+
+        .site-nav-podium:hover,
+        .site-nav-podium:focus-visible {
+            background-color: #c80b33;
+            color: #ffffff !important;
+        }
+
+        .site-nav-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            margin-right: -0.35rem;
+            border: 0;
+            border-radius: 0.5rem;
+            background: transparent;
+            color: #111827;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .site-nav-toggle:hover,
+        .site-nav-toggle:focus-visible {
+            background: #f3f4f6;
+            outline: none;
+        }
+
+        .site-nav-toggle:focus-visible {
+            box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #1e3a8a;
+        }
+
+        .site-nav-toggle svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .site-nav-toggle .icon-close {
+            display: none;
+        }
+
+        .site-nav-toggle[aria-expanded="true"] .icon-menu {
+            display: none;
+        }
+
+        .site-nav-toggle[aria-expanded="true"] .icon-close {
+            display: block;
+        }
+
+        .site-nav-panel {
+            position: fixed;
+            top: var(--site-nav-height, 4rem);
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .site-nav-panel[hidden] {
+            display: none !important;
+        }
+
+        .site-nav-panel-scroll {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+            padding: 0.35rem 1rem 0.75rem;
+        }
+
+        .site-nav-link {
+            display: flex;
+            align-items: center;
+            min-height: 48px;
+            padding: 0.8rem 0.35rem;
+            border-bottom: 1px solid #f3f4f6;
+            border-radius: 0.5rem;
+            color: #111827;
+            font-size: 1.0625rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .site-nav-link:hover,
+        .site-nav-link:focus-visible {
+            color: #1e3a8a;
+            outline: none;
+        }
+
+        .site-nav-panel-footer {
+            flex-shrink: 0;
+            padding: 0.85rem 1rem calc(0.85rem + env(safe-area-inset-bottom));
+            border-top: 1px solid #e5e7eb;
+            background: #ffffff;
+            box-shadow: 0 -8px 24px rgba(15, 23, 42, 0.06);
+        }
+
+        .site-nav-panel-footer p {
+            margin: 0 0 0.55rem;
+            color: #6b7280;
+            font-size: 0.8125rem;
+            text-align: center;
+        }
+
+        .site-nav-panel-footer .site-nav-podium {
+            width: 100%;
+        }
+
+        body.nav-menu-open {
+            overflow: hidden;
+        }
+
+        .training-calendar-card {
+            overflow: hidden;
+        }
+
+        .training-calendar-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .training-calendar-grid {
+            min-width: 40rem;
+        }
+
+        @media (max-width: 639px) {
+            .site-nav-brand span {
+                font-size: 1rem;
+                line-height: 1.25rem;
+            }
+
+            .training-calendar-card {
+                padding: 1rem;
+            }
+
+            #about .coach-float-stat {
+                position: static;
+                display: inline-block;
+                margin: 0.75rem 0.75rem 0 0;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            footer {
+                padding-bottom: 6.5rem;
+            }
+        }
+
+        @media (max-height: 720px) {
+            .site-nav-link {
+                min-height: 44px;
+                padding: 0.55rem 0.35rem;
+            }
+
+            .site-nav-panel-footer p {
+                display: none;
+            }
+
+            .site-nav-panel-footer {
+                padding-top: 0.65rem;
+                padding-bottom: calc(0.65rem + env(safe-area-inset-bottom));
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .site-nav-toggle {
+                display: none;
+            }
+
+            .site-nav-desktop {
+                display: flex;
+                flex: 1;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0.35rem 0.9rem;
+                min-width: 0;
+                margin-left: 1.25rem;
+            }
+
+            .site-nav-desktop .site-nav-podium {
+                margin-left: 0.35rem;
+                padding: 0.55rem 0.95rem;
+                font-size: 0.875rem;
+            }
+
+            .site-nav-panel {
+                display: none !important;
+            }
+        }
+    </style>
   </head>
 <body class="bg-background">
 <!-- Navigation Header -->
-<nav class="fixed top-0 w-full bg-white border-b border-gray-100 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-            <div class="flex items-center">
-                <img src="../assets/images/photo_Logo_7d_Trainign-1757015790518.jpg" alt="7D TRAINING Logo" class="h-10 w-auto mr-3">
-                <span class="text-xl font-bold text-primary">7D TRAINING</span>
-            </div>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#services" class="text-text-secondary hover:text-primary transition-colors">Services</a>
-                <a href="#testimonials" class="text-text-secondary hover:text-primary transition-colors">Success Stories</a>
-                <a href="#about" class="text-text-secondary hover:text-primary transition-colors">About Us</a>
-                <a href="https://www.7dtraining.app" target="_blank" rel="noopener noreferrer" class="btn-primary bg-[rgba(239,13,61,1)]">Project Podium</a>
-            </div>
-            <button class="md:hidden p-2" id="mobile-menu-toggle">
-                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
+<nav id="site-nav" class="fixed top-0 w-full bg-white border-b border-gray-100" aria-label="Main">
+    <div class="site-nav-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <a href="#home" class="site-nav-brand">
+            <img src="../assets/images/photo_Logo_7d_Trainign-1757015790518.jpg" alt="7D TRAINING Logo">
+            <span class="text-xl font-bold text-primary">7D TRAINING</span>
+        </a>
+        <div class="site-nav-desktop">
+            <a href="#home">Home</a>
+            <a href="#challenge">The Challenge</a>
+            <a href="#method">Our Method</a>
+            <a href="#services">Why It Works</a>
+            <a href="#assessment">Assessment</a>
+            <a href="#testimonials">Success Stories</a>
+            <a href="#about">About Us</a>
+            <a href="#plans">Plans</a>
+            <a href="#faq">FAQ</a>
+            <a href="#get-started">Get Started</a>
+            <a href="https://www.7dtraining.app" target="_blank" rel="noopener noreferrer" class="site-nav-podium">Project Podium</a>
+        </div>
+        <button type="button" class="site-nav-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+            <svg class="icon-menu" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg class="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="site-nav-panel" hidden>
+        <div class="site-nav-panel-scroll">
+            <a class="site-nav-link" href="#home">Home</a>
+            <a class="site-nav-link" href="#challenge">The Challenge</a>
+            <a class="site-nav-link" href="#method">Our Method</a>
+            <a class="site-nav-link" href="#services">Why It Works</a>
+            <a class="site-nav-link" href="#assessment">Free Assessment</a>
+            <a class="site-nav-link" href="#testimonials">Success Stories</a>
+            <a class="site-nav-link" href="#about">About Us</a>
+            <a class="site-nav-link" href="#plans">Coaching Plans</a>
+            <a class="site-nav-link" href="#faq">FAQ</a>
+            <a class="site-nav-link" href="#get-started">Get Started</a>
+        </div>
+        <div class="site-nav-panel-footer">
+            <p>Open the athlete app</p>
+            <a href="https://www.7dtraining.app" target="_blank" rel="noopener noreferrer" class="site-nav-podium">Project Podium</a>
         </div>
     </div>
 </nav>
 
     <!-- Hero Section -->
-    <section class="hero-gradient min-h-screen flex items-center relative overflow-hidden pt-16">
+    <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden pt-16">
         <div class="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary-800/85 to-secondary/80"></div>
         <div class="absolute inset-0">
             <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?q=80&w=2940&auto=format&fit=crop" alt="Open water triathlon swimming" class="w-full h-full object-cover opacity-20" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;" />
@@ -51,7 +340,7 @@
                             100+ Athletes Coached Successfully
                         </span>
                     </div>
-                    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-shadow-lg animate-fade-in-up">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white text-shadow-lg animate-fade-in-up">
                         Science-Based Coaching That 
                         <span class="text-accent-100">Delivers Results</span>
                     </h1>
@@ -105,7 +394,7 @@
     </section>
 
     <!-- Problem Agitation Section -->
-    <section class="py-20 bg-surface">
+    <section id="challenge" class="py-20 bg-surface">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
@@ -227,7 +516,7 @@
     </section>
 
     <!-- Solution Overview with TrainingPeaks Integration -->
-    <section class="py-20 bg-white">
+    <section id="method" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
@@ -239,10 +528,12 @@
             </div>
 
             <!-- TrainingPeaks Integration Preview -->
-            <div class="bg-surface rounded-2xl p-8 mb-16">
+            <div class="training-calendar-card bg-surface rounded-2xl p-8 mb-16">
                 <h3 class="text-2xl font-bold text-text-primary mb-6 text-center">
                     This is an example of how Your Personalized Training Calendar would look like
                 </h3>
+                <div class="training-calendar-scroll">
+                <div class="training-calendar-grid">
                 <div class="grid grid-cols-7 gap-2 mb-4">
                     <div class="text-center font-semibold text-text-secondary p-2">Mon</div>
                     <div class="text-center font-semibold text-text-secondary p-2">Tue</div>
@@ -351,6 +642,8 @@
                     <p class="text-sm text-text-secondary">
                         <span class="font-semibold">Hover over workouts</span> to see detailed periodization logic
                     </p>
+                </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -940,11 +1233,11 @@
                     </div>
                     
                     <!-- Floating Stats -->
-                    <div class="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-4 z-10">
+                    <div class="coach-float-stat absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-4 z-10">
                         <div class="text-2xl font-bold text-primary">100+</div>
                         <div class="text-sm text-text-secondary">Athletes Coached</div>
                     </div>
-                    <div class="absolute -top-6 -right-6 bg-white rounded-lg shadow-lg p-4 z-10">
+                    <div class="coach-float-stat absolute -top-6 -right-6 bg-white rounded-lg shadow-lg p-4 z-10">
                         <div class="text-2xl font-bold text-success">95%</div>
                         <div class="text-sm text-text-secondary">Success Rate</div>
                     </div>
@@ -954,7 +1247,7 @@
     </section>
 
     <!-- Service Comparison -->
-    <section class="py-20 bg-surface">
+    <section id="plans" class="py-20 bg-surface">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
@@ -1067,7 +1360,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-20 bg-white">
+    <section id="faq" class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
@@ -1166,7 +1459,7 @@
     </section>
 
     <!-- Final CTA Section -->
-    <section class="py-20 bg-surface">
+    <section id="get-started" class="py-20 bg-surface">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="urgency-badge mb-6 inline-block">
                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -1617,22 +1910,84 @@
         // Auto-rotate testimonials
         setInterval(nextTestimonial, 8000);
 
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
-            document.getElementById('assessment').scrollIntoView({ behavior: 'smooth' });
-        });
+        // Mobile menu: full-screen panel with every landing section plus Project Podium
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const siteNav = document.getElementById('site-nav');
+
+        function syncNavHeight() {
+            if (!siteNav) return;
+            const bar = siteNav.querySelector('.site-nav-inner');
+            if (bar) {
+                document.documentElement.style.setProperty('--site-nav-height', bar.offsetHeight + 'px');
+            }
+        }
+
+        function preventMenuBackgroundScroll(event) {
+            const scroll = mobileMenu && mobileMenu.querySelector('.site-nav-panel-scroll');
+            if (scroll && scroll.contains(event.target)) return;
+            event.preventDefault();
+        }
+
+        function setMenuOpen(open) {
+            if (!mobileMenu || !mobileMenuToggle) return;
+            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            if (open === isOpen) return;
+
+            mobileMenu.hidden = !open;
+            mobileMenuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            mobileMenuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            document.body.classList.toggle('nav-menu-open', open);
+
+            if (open) {
+                mobileMenu.querySelector('.site-nav-panel-scroll').scrollTop = 0;
+                document.addEventListener('touchmove', preventMenuBackgroundScroll, { passive: false });
+            } else {
+                document.removeEventListener('touchmove', preventMenuBackgroundScroll);
+            }
+        }
+
+            if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function () {
+                const open = mobileMenuToggle.getAttribute('aria-expanded') !== 'true';
+                setMenuOpen(open);
+            });
+
+            mobileMenu.querySelectorAll('a[target="_blank"]').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    setMenuOpen(false);
+                });
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') setMenuOpen(false);
+            });
+
+            const desktopNavQuery = window.matchMedia('(min-width: 1280px)');
+            const closeOnDesktop = function (event) {
+                if (event.matches) setMenuOpen(false);
+            };
+            if (desktopNavQuery.addEventListener) {
+                desktopNavQuery.addEventListener('change', closeOnDesktop);
+            } else if (desktopNavQuery.addListener) {
+                desktopNavQuery.addListener(closeOnDesktop);
+            }
+        }
+
+        syncNavHeight();
+        window.addEventListener('resize', syncNavHeight);
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (!target) return;
+                e.preventDefault();
+                setMenuOpen(false);
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             });
         });
 
