@@ -3,19 +3,2044 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7D TRAINING Coaching</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <script>
-        // Redirect to the landing page
-        window.location.href = 'pages/landing_page.html';
-    </script>
+    <link rel="canonical" href="https://www.7dtraining.com/" />
+    <title>7D TRAINING Coaching - Science-Based Coaching That Delivers Results</title>
+    <meta name="description" content="Transform your endurance performance with personalized, data-driven triathlon coaching. 100+ athletes coached with proven results. Get your free assessment today." />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <style>
+        section[id] {
+            scroll-margin-top: var(--site-nav-height, 4rem);
+        }
+
+        #site-nav {
+            z-index: 10000;
+        }
+
+        .site-nav-inner {
+            min-height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+        }
+
+        .site-nav-brand {
+            display: flex;
+            align-items: center;
+            min-width: 0;
+            text-decoration: none;
+        }
+
+        .site-nav-brand img {
+            height: 2.5rem;
+            width: auto;
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .site-nav-brand span {
+            white-space: nowrap;
+        }
+
+        .site-nav-desktop {
+            display: none;
+        }
+
+        .site-nav-desktop a {
+            color: #6b7280;
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.25rem;
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 0.35rem 0;
+        }
+
+        .site-nav-desktop a:hover,
+        .site-nav-desktop a:focus-visible {
+            color: #1e3a8a;
+        }
+
+        .site-nav-podium {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-height: 44px;
+            padding: 0.65rem 1.1rem;
+            border-radius: 0.5rem;
+            background-color: rgba(239, 13, 61, 1);
+            color: #ffffff !important;
+            font-weight: 700;
+            line-height: 1.2;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(239, 13, 61, 0.25);
+            transition: background-color 160ms ease, transform 160ms ease;
+        }
+
+        .site-nav-podium:hover,
+        .site-nav-podium:focus-visible {
+            background-color: #c80b33;
+            color: #ffffff !important;
+        }
+
+        .site-nav-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            margin-right: -0.35rem;
+            border: 0;
+            border-radius: 0.5rem;
+            background: transparent;
+            color: #111827;
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+
+        .site-nav-toggle:hover,
+        .site-nav-toggle:focus-visible {
+            background: #f3f4f6;
+            outline: none;
+        }
+
+        .site-nav-toggle:focus-visible {
+            box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #1e3a8a;
+        }
+
+        .site-nav-toggle svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .site-nav-toggle .icon-close {
+            display: none;
+        }
+
+        .site-nav-toggle[aria-expanded="true"] .icon-menu {
+            display: none;
+        }
+
+        .site-nav-toggle[aria-expanded="true"] .icon-close {
+            display: block;
+        }
+
+        .site-nav-panel {
+            position: fixed;
+            top: var(--site-nav-height, 4rem);
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .site-nav-panel[hidden] {
+            display: none !important;
+        }
+
+        .site-nav-panel-scroll {
+            flex: 1 1 auto;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            -webkit-overflow-scrolling: touch;
+            padding: 0.35rem 1rem 0.75rem;
+        }
+
+        .site-nav-link {
+            display: flex;
+            align-items: center;
+            min-height: 48px;
+            padding: 0.8rem 0.35rem;
+            border-bottom: 1px solid #f3f4f6;
+            border-radius: 0.5rem;
+            color: #111827;
+            font-size: 1.0625rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .site-nav-link:hover,
+        .site-nav-link:focus-visible {
+            color: #1e3a8a;
+            outline: none;
+        }
+
+        .site-nav-panel-footer {
+            flex-shrink: 0;
+            padding: 0.85rem 1rem calc(0.85rem + env(safe-area-inset-bottom));
+            border-top: 1px solid #e5e7eb;
+            background: #ffffff;
+            box-shadow: 0 -8px 24px rgba(15, 23, 42, 0.06);
+        }
+
+        .site-nav-panel-footer p {
+            margin: 0 0 0.55rem;
+            color: #6b7280;
+            font-size: 0.8125rem;
+            text-align: center;
+        }
+
+        .site-nav-panel-footer .site-nav-podium {
+            width: 100%;
+        }
+
+        body.nav-menu-open {
+            overflow: hidden;
+        }
+
+        .training-calendar-card {
+            overflow: hidden;
+        }
+
+        .training-calendar-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .training-calendar-grid {
+            min-width: 40rem;
+        }
+
+        @media (max-width: 639px) {
+            .site-nav-brand span {
+                font-size: 1rem;
+                line-height: 1.25rem;
+            }
+
+            .training-calendar-card {
+                padding: 1rem;
+            }
+
+            #about .coach-float-stat {
+                position: static;
+                display: inline-block;
+                margin: 0.75rem 0.75rem 0 0;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            footer {
+                padding-bottom: 6.5rem;
+            }
+        }
+
+        @media (max-height: 720px) {
+            .site-nav-link {
+                min-height: 44px;
+                padding: 0.55rem 0.35rem;
+            }
+
+            .site-nav-panel-footer p {
+                display: none;
+            }
+
+            .site-nav-panel-footer {
+                padding-top: 0.65rem;
+                padding-bottom: calc(0.65rem + env(safe-area-inset-bottom));
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .site-nav-toggle {
+                display: none;
+            }
+
+            .site-nav-desktop {
+                display: flex;
+                flex: 1;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0.35rem 0.9rem;
+                min-width: 0;
+                margin-left: 1.25rem;
+            }
+
+            .site-nav-desktop .site-nav-podium {
+                margin-left: 0.35rem;
+                padding: 0.55rem 0.95rem;
+                font-size: 0.875rem;
+            }
+
+            .site-nav-panel {
+                display: none !important;
+            }
+        }
+    </style>
   </head>
-<body>
-    <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
-        <h1>7D TRAINING Coaching</h1>
-        <p>Redirecting to main page...</p>
-        <p>If you are not redirected automatically, <a href="pages/landing_page.html">click here</a>.</p>
+<body class="bg-background">
+<!-- Navigation Header -->
+<nav id="site-nav" class="fixed top-0 w-full bg-white border-b border-gray-100" aria-label="Main">
+    <div class="site-nav-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <a href="#home" class="site-nav-brand">
+            <img src="/assets/images/photo_Logo_7d_Trainign-1757015790518.jpg" alt="7D TRAINING Logo">
+            <span class="text-xl font-bold text-primary">7D TRAINING</span>
+        </a>
+        <div class="site-nav-desktop">
+            <a href="#home">Home</a>
+            <a href="#challenge">The Challenge</a>
+            <a href="#method">Our Method</a>
+            <a href="#services">Why It Works</a>
+            <a href="#assessment">Assessment</a>
+            <a href="#testimonials">Success Stories</a>
+            <a href="#about">About Us</a>
+            <a href="#plans">Plans</a>
+            <a href="#faq">FAQ</a>
+            <a href="#get-started">Get Started</a>
+            <a href="https://www.7dtraining.app" target="_blank" rel="noopener noreferrer" class="site-nav-podium">Project Podium</a>
+        </div>
+        <button type="button" class="site-nav-toggle" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+            <svg class="icon-menu" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg class="icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
     </div>
+    <div id="mobile-menu" class="site-nav-panel" hidden>
+        <div class="site-nav-panel-scroll">
+            <a class="site-nav-link" href="#home">Home</a>
+            <a class="site-nav-link" href="#challenge">The Challenge</a>
+            <a class="site-nav-link" href="#method">Our Method</a>
+            <a class="site-nav-link" href="#services">Why It Works</a>
+            <a class="site-nav-link" href="#assessment">Free Assessment</a>
+            <a class="site-nav-link" href="#testimonials">Success Stories</a>
+            <a class="site-nav-link" href="#about">About Us</a>
+            <a class="site-nav-link" href="#plans">Coaching Plans</a>
+            <a class="site-nav-link" href="#faq">FAQ</a>
+            <a class="site-nav-link" href="#get-started">Get Started</a>
+        </div>
+        <div class="site-nav-panel-footer">
+            <p>Open the athlete app</p>
+            <a href="https://www.7dtraining.app" target="_blank" rel="noopener noreferrer" class="site-nav-podium">Project Podium</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center relative overflow-hidden pt-16">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary-800/85 to-secondary/80"></div>
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?q=80&w=2940&auto=format&fit=crop" alt="Open water triathlon swimming" class="w-full h-full object-cover opacity-20" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;" />
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <div class="mb-6">
+                        <span class="performance-badge bg-accent-100 mb-4 inline-block text-[rgba(239,13,61,1)]">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            100+ Athletes Coached Successfully
+                        </span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white text-shadow-lg animate-fade-in-up">
+                        Science-Based Coaching That 
+                        <span class="text-accent-100">Delivers Results</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed animation-delay-200 animate-fade-in-up">
+                        Transform your endurance performance with personalized, data-driven training plans backed by 8+ years of proven methodology and the best sports sciences practices used by professional triathlon coaches.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 animation-delay-400 animate-fade-in-up">
+                        <a href="#assessment" class="btn-primary text-lg px-8 py-4 animate-pulse-accent bg-[rgba(239,13,61,1)]">
+                            Get Your Free Assessment
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <button class="btn-outline border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4" onclick="showTestimonials()">
+                            View Success Stories
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Trust Bar -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <h3 class="text-white text-xl font-semibold mb-6">Trusted Credentials</h3>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="flex items-center text-white">
+                            <img src="/assets/images/Ironman%20University%20Logo.jpg" alt="IRONMAN University" class="w-12 h-12 rounded-lg mr-4 object-contain bg-white p-0.5" />
+                            <div>
+                                <div class="font-semibold">IronMan University</div>
+                                <div class="text-blue-200 text-sm">Certified Coach</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-white">
+                            <img src="/assets/images/TrainingPeaks_App_Icon-HighRes.png" alt="TrainingPeaks Level 2" class="w-12 h-12 rounded-lg mr-4 object-contain bg-white p-0.5" />
+                            <div>
+                                <div class="font-semibold">TrainingPeaks Level 2</div>
+                                <div class="text-blue-200 text-sm">Accredited Coach</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-white">
+                            <div class="w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-[rgba(239,13,61,1)]">
+                                <span class="text-white font-bold text-lg">8+</span>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Years Experience</div>
+                                <div class="text-blue-200 text-sm">Remote and onsite coaching</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Agitation Section -->
+    <section id="challenge" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                    Are Generic Training Plans Holding You Back?
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Most endurance athletes struggle with one-size-fits-all programs that ignore their unique needs, schedule, and goals.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Generic Plan Problems -->
+                <div class="bg-error-50 rounded-2xl p-8 border-l-4 border-error">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-error-100 rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-error" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-error">Generic Training Plans</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-error mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+                            </svg>
+                            <span class="text-text-primary">No adaptation to your schedule or life demands</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-error mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+                            </svg>
+                            <span class="text-text-primary">Ignores your current fitness level and limitations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-error mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+                            </svg>
+                            <span class="text-text-primary">No guidance when things don't go as planned</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-error mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+                            </svg>
+                            <span class="text-text-primary">Leads to plateaus and potential burnout</span>
+                        </li>
+                    </ul>
+                    
+                    <!-- Performance Graph - Plateau -->
+                    <div class="mt-8 p-4 bg-white rounded-lg">
+                        <h4 class="text-sm font-semibold text-text-secondary mb-3">Performance Over Time</h4>
+                        <div class="h-24 flex items-end space-x-2">
+                            <div class="bg-error h-8 w-4 rounded-t"></div>
+                            <div class="bg-error h-12 w-4 rounded-t"></div>
+                            <div class="bg-error h-16 w-4 rounded-t"></div>
+                            <div class="bg-error h-16 w-4 rounded-t"></div>
+                            <div class="bg-error h-16 w-4 rounded-t"></div>
+                            <div class="bg-error h-14 w-4 rounded-t"></div>
+                            <div class="bg-error h-12 w-4 rounded-t"></div>
+                        </div>
+                        <p class="text-xs text-error mt-2">Plateau and decline</p>
+                    </div>
+                </div>
+
+                <!-- Personalized Coaching Benefits -->
+                <div class="rounded-2xl p-8 border-l-4 bg-[rgba(242,244,252,1)] border-[rgba(14,36,237,1)]">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mr-4 bg-[rgba(223,211,253,1)]">
+                            <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[rgba(14,36,237,1)]">Personalized Coaching</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-success mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                            <span class="text-text-primary">Adapts to your schedule, travel, and life changes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-success mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                            <span class="text-text-primary">Built around your current fitness and goals</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-success mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                            <span class="text-text-primary">Direct coach support for adjustments and questions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-success mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                            <span class="text-text-primary">Continuous improvement and breakthrough results</span>
+                        </li>
+                    </ul>
+                    
+                    <!-- Performance Graph - Growth -->
+                    <div class="mt-8 p-4 bg-white rounded-lg">
+                        <h4 class="text-sm font-semibold text-text-secondary mb-3">Performance Over Time</h4>
+                        <div class="h-24 flex items-end space-x-2">
+                            <div class="h-8 w-4 rounded-t bg-[rgba(14,36,237,1)]"></div>
+                            <div class="h-12 w-4 rounded-t bg-[rgba(14,36,237,1)]"></div>
+                            <div class="h-16 w-4 rounded-t bg-[rgba(14,36,237,1)]"></div>
+                            <div class="h-20 w-4 rounded-t bg-[rgba(14,36,237,1)]"></div>
+                            <div class="h-24 w-4 rounded-t bg-[rgba(14,36,237,1)]"></div>
+                            <div class="h-20 w-4 rounded-t bg-[rgba(14,36,237,1)]"></div>
+                            <div class="h-24 w-4 rounded-t bg-[rgba(14,36,237,1)]"></div>
+                        </div>
+                        <p class="text-xs mt-2 text-[rgba(14,36,237,1)]">Consistent improvement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Overview with TrainingPeaks Integration -->
+    <section id="method" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                    The Science-Based Solution
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Experience the power of personalized coaching with integrated TrainingPeaks technology and proven methodology.
+                </p>
+            </div>
+
+            <!-- TrainingPeaks Integration Preview -->
+            <div class="training-calendar-card bg-surface rounded-2xl p-8 mb-16">
+                <h3 class="text-2xl font-bold text-text-primary mb-6 text-center">
+                    This is an example of how Your Personalized Training Calendar would look like
+                </h3>
+                <div class="training-calendar-scroll">
+                <div class="training-calendar-grid">
+                <div class="grid grid-cols-7 gap-2 mb-4">
+                    <div class="text-center font-semibold text-text-secondary p-2">Mon</div>
+                    <div class="text-center font-semibold text-text-secondary p-2">Tue</div>
+                    <div class="text-center font-semibold text-text-secondary p-2">Wed</div>
+                    <div class="text-center font-semibold text-text-secondary p-2">Thu</div>
+                    <div class="text-center font-semibold text-text-secondary p-2">Fri</div>
+                    <div class="text-center font-semibold text-text-secondary p-2">Sat</div>
+                    <div class="text-center font-semibold text-text-secondary p-2">Sun</div>
+                </div>
+                <div class="grid grid-cols-7 gap-2 items-start">
+                    <!-- Monday: Rest -->
+                    <div class="flex flex-col gap-2">
+                        <div class="bg-gray-100 rounded-lg p-3 min-h-20 relative group cursor-pointer">
+                            <div class="text-xs font-semibold text-text-secondary">Rest</div>
+                            <div class="text-xs text-text-muted">Recovery</div>
+                            <div class="absolute inset-0 bg-gray-600/90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity p-3 text-white text-xs">
+                                <div class="font-semibold">Full Recovery</div>
+                                <div>Mobility optional</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Tuesday: Swim + Run -->
+                    <div class="flex flex-col gap-2">
+                        <div class="bg-primary-100 rounded-lg p-3 min-h-16 relative group cursor-pointer">
+                            <div class="text-xs font-semibold text-primary">Swim</div>
+                            <div class="text-xs text-text-secondary">Technique</div>
+                            <div class="absolute inset-0 bg-primary/90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity p-2 text-white text-xs">
+                                <div class="font-semibold">Technique + Sustained</div>
+                                <div>Aerobic technique focus</div>
+                            </div>
+                        </div>
+                        <div class="bg-success-100 rounded-lg p-3 min-h-16 relative group cursor-pointer">
+                            <div class="text-xs font-semibold text-success">Run</div>
+                            <div class="text-xs text-text-secondary">Intervals</div>
+                            <div class="absolute inset-0 bg-success/90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity p-2 text-white text-xs">
+                                <div class="font-semibold">Run Intervals</div>
+                                <div>Track or road intervals</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Wednesday: Bike Z3-Z4 -->
+                    <div class="flex flex-col gap-2">
+                        <div class="bg-accent-100 rounded-lg p-3 min-h-20 relative group cursor-pointer">
+                            <div class="text-xs font-semibold text-accent-700">Bike</div>
+                            <div class="text-xs text-text-secondary">Z3–Z4</div>
+                            <div class="absolute inset-0 bg-accent/90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity p-3 text-white text-xs">
+                                <div class="font-semibold">Z3 Intervals</div>
+                                <div>Tempo efforts, max Z4</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Thursday: Swim + Run -->
+                    <div class="flex flex-col gap-2">
+                        <div class="bg-primary-100 rounded-lg p-3 min-h-16 relative group cursor-pointer">
+                            <div class="text-xs font-semibold text-primary">Swim</div>
+                            <div class="text-xs text-text-secondary">Sprints</div>
+                            <div class="absolute inset-0 bg-primary/90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity p-2 text-white text-xs">
+                                <div class="font-semibold">Swim Intervals</div>
+                                <div>Short sprint sets</div>
+                            </div>
+                        </div>
+                        <div class="bg-success-100 rounded-lg p-3 min-h-16 relative group cursor-pointer">
+                            <div class="text-xs font-semibold text-success">Run</div>
+                            <div class="text-xs text-text-secondary">Z2–Z3</div>
+                            <div class="absolute inset-0 bg-success/90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity p-2 text-white text-xs">
+                                <div class="font-semibold">Aerobic Run</div>
+                                <div>Z2 to Z3 endurance</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Friday: Bike Z4-Z5 -->
+                    <div class="flex flex-col gap-2">
+                        <div class="bg-accent-100 rounded-lg p-3 min-h-20 relative group cursor-pointer">
+                            <div class="text-xs font-semibold text-accent-700">Bike</div>
+                            <div class="text-xs text-text-secondary">Z4–Z5</div>
+                            <div class="absolute inset-0 bg-accent/90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity p-3 text-white text-xs">
+                                <div class="font-semibold">High Intensity</div>
+                                <div>Z4 and Z5 intervals</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Saturday: Brick -->
+                    <div class="flex flex-col gap-2">
+                        <div class="bg-accent-100 rounded-lg p-3 min-h-20 relative group cursor-pointer">
+                            <div class="text-xs font-semibold text-accent-700">Brick</div>
+                            <div class="text-xs text-text-secondary">Bike → Run</div>
+                            <div class="absolute inset-0 bg-accent/90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity p-3 text-white text-xs">
+                                <div class="font-semibold">Long Bike Brick</div>
+                                <div>Long ride + transition run</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sunday: Long Run Z2 -->
+                    <div class="flex flex-col gap-2">
+                        <div class="bg-success-100 rounded-lg p-3 min-h-20 relative group cursor-pointer">
+                            <div class="text-xs font-semibold text-success">Run</div>
+                            <div class="text-xs text-text-secondary">Long Z2</div>
+                            <div class="absolute inset-0 bg-success/90 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity p-3 text-white text-xs">
+                                <div class="font-semibold">Long Run</div>
+                                <div>Aerobic endurance at Z2</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-text-secondary">
+                        <span class="font-semibold">Hover over workouts</span> to see detailed periodization logic
+                    </p>
+                </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Benefits Section -->
+    <section id="services" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                    Why 7D TRAINING Coaching Works
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Three pillars of success that set our coaching apart from generic training programs.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- TrainingPeaks Integration -->
+                <div class="card-elevated group">
+                    <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-primary mb-4">TrainingPeaks Integration</h3>
+                    <p class="text-text-secondary mb-6">
+                        Professional-grade training platform used by Olympic coaches. Track power, pace, heart rate, and recovery metrics with precision analytics.
+                    </p>
+                    <div class="bg-primary-50 rounded-lg p-4 mb-4">
+                        <h4 class="font-semibold text-primary mb-2">Case Study: Sarah M.</h4>
+                        <p class="text-sm text-text-secondary">
+                            "TrainingPeaks data showed my power zones were miscalculated. After coach adjustments, I improved my 40K bike split by 4 minutes."
+                        </p>
+                        <div class="flex justify-between mt-3 text-xs">
+                            <span class="text-error">Before: 1:15:30</span>
+                            <span class="text-success">After: 1:11:45</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi-Sport Expertise -->
+                <div class="card-elevated group">
+                    <div class="w-16 h-16 bg-accent-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-primary mb-4">Multi-Sport Mastery</h3>
+                    <p class="text-text-secondary mb-6">
+                        Expertise across triathlon, Ocean Man swimming, mountain biking, cycling competitions, marathons, and ultramarathons. One coach, all disciplines.
+                    </p>
+                    <div class="bg-accent-50 rounded-lg p-4 mb-4">
+                        <h4 class="font-semibold text-accent-700 mb-2">Case Study: Mike R.</h4>
+                        <p class="text-sm text-text-secondary">
+                            "Transitioned from marathon running to Ironman. Coach's multi-sport knowledge helped me qualify for Kona in my second attempt."
+                        </p>
+                        <div class="flex justify-between mt-3 text-xs">
+                            <span class="text-text-muted">Marathon PR: 3:15</span>
+                            <span class="text-success">Ironman: 10:45 (Kona Slot)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remote Coaching Effectiveness -->
+                <div class="card-elevated group">
+                    <div class="w-16 h-16 bg-success-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-success group-hover:text-white transition-all">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-text-primary mb-4">Proven Remote Method</h3>
+                    <p class="text-text-secondary mb-6">
+                        8+ years perfecting remote coaching methodology. Daily communication, video analysis, and real-time plan adjustments regardless of location.
+                    </p>
+                    <div class="bg-success-50 rounded-lg p-4 mb-4">
+                        <h4 class="font-semibold text-success mb-2">Case Study: Lisa K.</h4>
+                        <p class="text-sm text-text-secondary">
+                            "Living in rural Montana, remote coaching was my only option. Achieved Boston Marathon qualification with constant coach support."
+                        </p>
+                        <div class="flex justify-between mt-3 text-xs">
+                            <span class="text-error">Goal: 3:35 (BQ)</span>
+                            <span class="text-success">Result: 3:28:15</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Assessment Tool -->
+    <section id="assessment" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                    Get Your Free Performance Assessment
+                </h2>
+                <p class="text-xl text-text-secondary">
+                    Discover your personalized training approach in 4 simple steps
+                </p>
+            </div>
+
+            <div class="bg-surface rounded-2xl p-8">
+                <!-- Progress Bar -->
+                <div class="mb-8">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-text-secondary">Progress</span>
+                        <span class="text-sm font-medium text-primary" id="progress-text">Step 1 of 4</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-primary h-2 rounded-full transition-all duration-300" id="progress-bar" style="width: 25%"></div>
+                    </div>
+                </div>
+
+                <!-- Assessment Form -->
+                <form id="assessment-form">
+                    <!-- Step 1: Experience Level -->
+                    <div class="assessment-step" id="step-1">
+                        <h3 class="text-2xl font-bold text-text-primary mb-6">What's your current experience level?</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <label class="assessment-option">
+                                <input type="radio" name="experience" value="beginner" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-primary transition-colors">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="text-lg font-semibold">Beginner</h4>
+                                    </div>
+                                    <p class="text-text-secondary">New to endurance sports or looking to get started with structured training</p>
+                                </div>
+                            </label>
+                            <label class="assessment-option">
+                                <input type="radio" name="experience" value="intermediate" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-primary transition-colors">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="text-lg font-semibold">Intermediate</h4>
+                                    </div>
+                                    <p class="text-text-secondary">Have completed races but struggling to improve or break through plateaus</p>
+                                </div>
+                            </label>
+                            <label class="assessment-option">
+                                <input type="radio" name="experience" value="advanced" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-primary transition-colors">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-12 h-12 bg-success-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="text-lg font-semibold">Advanced</h4>
+                                    </div>
+                                    <p class="text-text-secondary">Experienced athlete seeking optimization and competitive edge</p>
+                                </div>
+                            </label>
+                            <label class="assessment-option">
+                                <input type="radio" name="experience" value="elite" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-primary transition-colors">
+                                    <div class="flex items-center mb-3">
+                                        <div class="w-12 h-12 bg-warning-100 rounded-full flex items-center justify-center mr-4">
+                                            <svg class="w-6 h-6 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="text-lg font-semibold">Elite/Pro</h4>
+                                    </div>
+                                    <p class="text-text-secondary">Professional or elite level athlete with specific performance goals</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Training Goals -->
+                    <div class="assessment-step hidden" id="step-2">
+                        <h3 class="text-2xl font-bold text-text-primary mb-6">What are your primary training goals?</h3>
+                        <div class="space-y-4">
+                            <label class="assessment-option block">
+                                <input type="checkbox" name="goals" value="triathlon" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary transition-colors flex items-center">
+                                    <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                        <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold">Triathlon (Sprint to Ironman)</h4>
+                                        <p class="text-sm text-text-secondary">Complete or improve triathlon performance</p>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="assessment-option block">
+                                <input type="checkbox" name="goals" value="swimming" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary transition-colors flex items-center">
+                                    <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                        <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold">Ocean Man Swimming</h4>
+                                        <p class="text-sm text-text-secondary">Open water swimming competitions</p>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="assessment-option block">
+                                <input type="checkbox" name="goals" value="cycling" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary transition-colors flex items-center">
+                                    <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                        <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold">Cycling/Mountain Biking</h4>
+                                        <p class="text-sm text-text-secondary">Road cycling or mountain bike competitions</p>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="assessment-option block">
+                                <input type="checkbox" name="goals" value="running" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-4 cursor-pointer hover:border-primary transition-colors flex items-center">
+                                    <div class="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                                        <svg class="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold">Marathon/Ultramarathon</h4>
+                                        <p class="text-sm text-text-secondary">Long distance running events</p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Time Availability -->
+                    <div class="assessment-step hidden" id="step-3">
+                        <h3 class="text-2xl font-bold text-text-primary mb-6">How much time can you dedicate to training?</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <label class="assessment-option">
+                                <input type="radio" name="time" value="5-7" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-primary transition-colors text-center">
+                                    <div class="text-3xl font-bold text-primary mb-2">5-7</div>
+                                    <div class="font-semibold mb-2">Hours per week</div>
+                                    <p class="text-sm text-text-secondary">Perfect for beginners or busy professionals</p>
+                                </div>
+                            </label>
+                            <label class="assessment-option">
+                                <input type="radio" name="time" value="8-12" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-primary transition-colors text-center">
+                                    <div class="text-3xl font-bold text-primary mb-2">8-12</div>
+                                    <div class="font-semibold mb-2">Hours per week</div>
+                                    <p class="text-sm text-text-secondary">Ideal for Olympic distance and 70.3 training</p>
+                                </div>
+                            </label>
+                            <label class="assessment-option">
+                                <input type="radio" name="time" value="13-18" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-primary transition-colors text-center">
+                                    <div class="text-3xl font-bold text-primary mb-2">13-18</div>
+                                    <div class="font-semibold mb-2">Hours per week</div>
+                                    <p class="text-sm text-text-secondary">Great for Ironman and competitive goals</p>
+                                </div>
+                            </label>
+                            <label class="assessment-option">
+                                <input type="radio" name="time" value="19+" class="sr-only" />
+                                <div class="border-2 border-gray-200 rounded-lg p-6 cursor-pointer hover:border-primary transition-colors text-center">
+                                    <div class="text-3xl font-bold text-primary mb-2">19+</div>
+                                    <div class="font-semibold mb-2">Hours per week</div>
+                                    <p class="text-sm text-text-secondary">Elite level training commitment</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Contact Information -->
+                    <div class="assessment-step hidden" id="step-4">
+                        <h3 class="text-2xl font-bold text-text-primary mb-6">Get your personalized assessment results</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">First Name *</label>
+                                <input type="text" name="firstName" required class="form-input" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Last Name *</label>
+                                <input type="text" name="lastName" required class="form-input" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Email Address *</label>
+                                <input type="email" name="email" required class="form-input" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Phone Number</label>
+                                <input type="tel" name="phone" class="form-input" />
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label class="flex items-start">
+                                <input type="checkbox" name="consent" required class="mt-1 mr-3" />
+                                <span class="text-sm text-text-secondary">
+                                    I agree to receive my personalized assessment results and occasional training tips via email. You can unsubscribe at any time.
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex justify-between mt-8">
+                        <button type="button" id="prev-btn" class="btn-outline hidden" onclick="previousStep()">
+                            ← Previous
+                        </button>
+                        <div class="flex-1"></div>
+                        <button type="button" id="next-btn" class="btn-primary" onclick="nextStep()">
+                            Next →
+                        </button>
+                        <button type="submit" id="submit-btn" class="btn-primary hidden">
+                            Get My Assessment
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Instant Assessment Results (shown after submit) -->
+                <div id="assessment-results" class="hidden mt-8 border-t border-gray-200 pt-8">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-2">Your Preliminary Assessment</h3>
+                        <p class="text-text-secondary" id="results-intro">Based on your answers, here is your personalized starting point.</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-white rounded-xl p-5 border border-gray-100">
+                            <div class="text-sm font-semibold text-primary mb-2">Focus Level</div>
+                            <p class="text-text-secondary text-sm" id="result-experience"></p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border border-gray-100">
+                            <div class="text-sm font-semibold text-primary mb-2">Recommended Structure</div>
+                            <p class="text-text-secondary text-sm" id="result-time"></p>
+                        </div>
+                        <div class="bg-white rounded-xl p-5 border border-gray-100">
+                            <div class="text-sm font-semibold text-primary mb-2">Sport Priorities</div>
+                            <p class="text-text-secondary text-sm" id="result-goals"></p>
+                        </div>
+                    </div>
+                    <div class="bg-primary-50 rounded-xl p-6 mb-6">
+                        <h4 class="font-semibold text-text-primary mb-2">What happens next?</h4>
+                        <p class="text-sm text-text-secondary mb-3" id="result-next-steps">
+                            We received your details. A coach will review your answers and reach out shortly with a more detailed training recommendation.
+                        </p>
+                        <p class="text-sm text-text-secondary">
+                            You should also receive a confirmation email at the address you provided.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                        <a href="https://wa.me/573134190663?text=Hi%20Diego%2C%20I%20just%20completed%20the%20free%20assessment%20and%20would%20like%20to%20talk%20about%20coaching."
+                           target="_blank" rel="noopener noreferrer"
+                           class="btn-primary text-center bg-[rgba(239,13,61,1)]">
+                            Message on WhatsApp
+                        </a>
+                        <a href="https://www.7dtraining.app" target="_blank" rel="noopener noreferrer" class="btn-outline text-center">
+                            Project Podium
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof & Testimonials -->
+    <section id="testimonials" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                    Success Stories from 100+ Athletes
+                </h2>
+                <p class="text-xl text-text-secondary">
+                    Real results from real athletes who transformed their performance
+                </p>
+            </div>
+
+            <!-- Testimonial Carousel -->
+            <div class="relative">
+                <div class="testimonial-carousel overflow-hidden">
+                    <div class="flex transition-transform duration-500" id="testimonial-track">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-slide w-full flex-shrink-0">
+                            <div class="grid md:grid-cols-3 gap-8">
+                                <div class="testimonial-card">
+                                    <div class="flex items-center mb-4">
+                                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Sarah Martinez" class="w-12 h-12 rounded-full mr-4" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=150&auto=format&fit=crop'; this.onerror=null;" />
+                                        <div>
+                                            <div class="font-semibold text-text-primary">Sarah Martinez</div>
+                                            <div class="text-sm text-text-secondary">Age 34, Marketing Director</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-text-secondary mb-4">
+                                        "From struggling to finish a sprint triathlon to qualifying for 70.3 Worlds in 18 months. The personalized approach made all the difference."
+                                    </p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <div class="flex items-center mb-4">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Mike Thompson" class="w-12 h-12 rounded-full mr-4" onerror="this.src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150'; this.onerror=null;" />
+                                        <div>
+                                            <div class="font-semibold text-text-primary">Mike Thompson</div>
+                                            <div class="text-sm text-text-secondary">Age 42, Engineer</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-text-secondary mb-4">
+                                        "Remote coaching worked perfectly with my travel schedule. Coach adapted my training for hotel gyms and different time zones."
+                                    </p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <div class="flex items-center mb-4">
+                                        <img src="https://images.pixabay.com/photo/2016/11/21/12/42/beard-1845166_150.jpg" alt="David Chen" class="w-12 h-12 rounded-full mr-4" onerror="this.src='https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150'; this.onerror=null;" />
+                                        <div>
+                                            <div class="font-semibold text-text-primary">David Chen</div>
+                                            <div class="text-sm text-text-secondary">Age 28, Software Developer</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-text-secondary mb-4">
+                                        "TrainingPeaks integration showed exactly where I was overtraining. Smart recovery protocols helped me finally break through my plateau."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-slide w-full flex-shrink-0">
+                            <div class="grid md:grid-cols-3 gap-8">
+                                <div class="testimonial-card">
+                                    <div class="flex items-center mb-4">
+                                        <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Lisa Rodriguez" class="w-12 h-12 rounded-full mr-4" onerror="this.src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop'; this.onerror=null;" />
+                                        <div>
+                                            <div class="font-semibold text-text-primary">Lisa Rodriguez</div>
+                                            <div class="text-sm text-text-secondary">Age 39, Nurse</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-text-secondary mb-4">
+                                        "Shift work made consistent training impossible until I found this coaching. Plans adapted to my rotating schedule perfectly."
+                                    </p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <div class="flex items-center mb-4">
+                                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop" alt="James Wilson" class="w-12 h-12 rounded-full mr-4" onerror="this.src='https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=150'; this.onerror=null;" />
+                                        <div>
+                                            <div class="font-semibold text-text-primary">James Wilson</div>
+                                            <div class="text-sm text-text-secondary">Age 51, Business Owner</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-text-secondary mb-4">
+                                        "Started as a complete beginner at 48. Now I'm competing in my age group and loving every minute of training."
+                                    </p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <div class="flex items-center mb-4">
+                                        <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150" alt="Emma Foster" class="w-12 h-12 rounded-full mr-4" onerror="this.src='https://images.pixabay.com/photo/2017/05/31/04/59/beautiful-2359121_150.jpg'; this.onerror=null;" />
+                                        <div>
+                                            <div class="font-semibold text-text-primary">Emma Foster</div>
+                                            <div class="text-sm text-text-secondary">Age 26, Teacher</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-text-secondary mb-4">
+                                        "Ocean Man swimming was my dream. Coach's open water expertise and technique focus got me to nationals in my first season."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Navigation -->
+                <button class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow" onclick="previousTestimonial()">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow" onclick="nextTestimonial()">
+                    <svg class="w-6 h-6 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Success Metrics -->
+            <div class="grid md:grid-cols-4 gap-8 mt-16">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary mb-2">100+</div>
+                    <div class="text-text-secondary">Athletes Coached</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-accent mb-2">95%</div>
+                    <div class="text-text-secondary">Goal Achievement Rate</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-success mb-2">250+</div>
+                    <div class="text-text-secondary">Race Completions</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-primary mb-2">8+</div>
+                    <div class="text-text-secondary">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coach Credentials -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                        This is how we will support you in your training journey
+                    </h2>
+                    <p class="text-xl text-text-secondary mb-8">
+                        Science-based methodology meets real-world experience to deliver results that matter.
+                    </p>
+                    
+                    <!-- Credentials -->
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center">
+                            <div class="trust-badge">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                IronMan University Certified
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="trust-badge">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                TrainingPeaks Level 2 Coach
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience Timeline -->
+                    <div class="bg-surface rounded-lg p-6">
+                        <h3 class="font-semibold text-text-primary mb-4">8+ Years of Proven Results</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-primary rounded-full mr-4"></div>
+                                <div>
+                                    <div class="font-medium">2018-2026: Remote Coaching Specialist</div>
+                                    <div class="text-sm text-text-secondary">100+ athletes across 15 countries</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-accent rounded-full mr-4"></div>
+                                <div>
+                                    <div class="font-medium">2020: TrainingPeaks Certification</div>
+                                    <div class="text-sm text-text-secondary">Advanced analytics and periodization</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-success rounded-full mr-4"></div>
+                                <div>
+                                    <div class="font-medium">2019: IronMan University</div>
+                                    <div class="text-sm text-text-secondary">Elite coaching methodology</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="rounded-2xl shadow-lg overflow-hidden h-96 relative" id="coach-photo-carousel">
+                        <img class="coach-carousel-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700" src="https://images.unsplash.com/photo-1530549387789-4c1017266635?q=80&w=800&auto=format&fit=crop" alt="Triathlete swimming in open water" onerror="this.src='https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&w=800'; this.onerror=null;" />
+                        <img class="coach-carousel-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" src="https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop" alt="Cyclists on the road" />
+                        <img class="coach-carousel-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=800&auto=format&fit=crop" alt="Athlete running outdoors" />
+                        <img class="coach-carousel-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700" src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=800&auto=format&fit=crop" alt="Road cycling training" />
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                            <button type="button" class="coach-carousel-dot w-2.5 h-2.5 rounded-full bg-white opacity-100" aria-label="Show swimming photo"></button>
+                            <button type="button" class="coach-carousel-dot w-2.5 h-2.5 rounded-full bg-white opacity-50" aria-label="Show cycling photo"></button>
+                            <button type="button" class="coach-carousel-dot w-2.5 h-2.5 rounded-full bg-white opacity-50" aria-label="Show running photo"></button>
+                            <button type="button" class="coach-carousel-dot w-2.5 h-2.5 rounded-full bg-white opacity-50" aria-label="Show bike training photo"></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Stats -->
+                    <div class="coach-float-stat absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-4 z-10">
+                        <div class="text-2xl font-bold text-primary">100+</div>
+                        <div class="text-sm text-text-secondary">Athletes Coached</div>
+                    </div>
+                    <div class="coach-float-stat absolute -top-6 -right-6 bg-white rounded-lg shadow-lg p-4 z-10">
+                        <div class="text-2xl font-bold text-success">95%</div>
+                        <div class="text-sm text-text-secondary">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Comparison -->
+    <section id="plans" class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                    Choose Your Path to Success
+                </h2>
+                <p class="text-xl text-text-secondary">
+                    Compare our service options and find the perfect fit for your goals
+                </p>
+            </div>
+
+            <!-- Side-by-side comparison -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <!-- Generic Plans -->
+                    <div class="service-content p-8 border-b md:border-b-0 md:border-r border-gray-100" id="generic-content">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-text-primary mb-2">Generic Training Plans</h3>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-error mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+                                </svg>
+                                <span>Fixed schedule, no adaptations</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-error mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+                                </svg>
+                                <span>No coach support or guidance</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-error mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+                                </svg>
+                                <span>Basic PDF or app format</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-error mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+                                </svg>
+                                <span>No performance tracking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-error mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"/>
+                                </svg>
+                                <span>Limited to single discipline</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="bg-error-50 rounded-lg p-4">
+                            <div class="text-sm font-semibold text-error mb-2">Typical Outcome</div>
+                            <div class="text-sm text-text-secondary">Many athletes plateau or quit within months due to lack of personalization and support</div>
+                        </div>
+                    </div>
+
+                    <!-- Personalized Coaching -->
+                    <div class="service-content p-8 bg-primary-50" id="personalized-content">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-text-primary mb-2">Personalized Coaching</h3>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-success mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span>Fully adaptive training plans</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-success mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span>Direct coach communication</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-success mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span>TrainingPeaks integration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-success mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span>Advanced performance analytics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-5 h-5 text-success mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span>Multi-sport expertise</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="bg-success-50 rounded-lg p-4 mb-6">
+                            <div class="text-sm font-semibold text-success mb-2">Proven Approach</div>
+                            <div class="text-sm text-text-secondary">Athletes get adaptive plans, coach feedback, and progress tracking tailored to their goals and schedule</div>
+                        </div>
+                        
+                        <a href="#assessment" class="btn-primary w-full text-center block">
+                            Start Your Assessment
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-xl text-text-secondary">
+                    Get answers to common questions about remote coaching
+                </p>
+            </div>
+
+            <!-- FAQ Search -->
+            <div class="mb-8">
+                <div class="relative">
+                    <input type="text" placeholder="Search FAQ..." class="form-input pl-12" id="faq-search" onkeyup="searchFAQ()" />
+                    <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- FAQ Items -->
+            <div class="space-y-4" id="faq-container">
+                <div class="faq-item bg-surface rounded-lg">
+                    <button class="faq-question w-full text-left p-6 font-semibold text-text-primary hover:text-primary transition-colors" onclick="toggleFAQ(this)">
+                        How effective is remote coaching compared to in-person training?
+                        <svg class="faq-icon float-right w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-text-secondary">
+                        <p>Remote coaching has proven equally effective as in-person training for endurance sports. With TrainingPeaks integration, daily communication, and video analysis, you receive the same level of personalized attention. Our 95% success rate and 100+ successfully coached remote athletes demonstrate the effectiveness of our methodology.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-surface rounded-lg">
+                    <button class="faq-question w-full text-left p-6 font-semibold text-text-primary hover:text-primary transition-colors" onclick="toggleFAQ(this)">
+                        What time commitment is required for coaching?
+                        <svg class="faq-icon float-right w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-text-secondary">
+                        <p>Training time varies based on your goals and availability (5-20+ hours per week). Coach communication requires minimal time - quick daily check-ins and weekly planning calls. Plans are designed to fit your schedule, not the other way around.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-surface rounded-lg">
+                    <button class="faq-question w-full text-left p-6 font-semibold text-text-primary hover:text-primary transition-colors" onclick="toggleFAQ(this)">
+                        How quickly will I see improvements?
+                        <svg class="faq-icon float-right w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-text-secondary">
+                        <p>Most athletes notice improvements in 4-6 weeks, with significant performance gains by 12 weeks. Timeline depends on your starting fitness, consistency, and goals. Our data-driven approach ensures continuous progress tracking and plan adjustments for optimal results.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-surface rounded-lg">
+                    <button class="faq-question w-full text-left p-6 font-semibold text-text-primary hover:text-primary transition-colors" onclick="toggleFAQ(this)">
+                        What if I need to modify my training due to life changes?
+                        <svg class="faq-icon float-right w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-text-secondary">
+                        <p>Plan adaptability is a core strength of personalized coaching. Whether you're traveling, dealing with work stress, or facing unexpected challenges, your plan adjusts in real-time. This flexibility is what sets personalized coaching apart from generic programs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-surface rounded-lg">
+                    <button class="faq-question w-full text-left p-6 font-semibold text-text-primary hover:text-primary transition-colors" onclick="toggleFAQ(this)">
+                        Do I need expensive equipment or gym membership?
+                        <svg class="faq-icon float-right w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-text-secondary">
+                        <p>Training plans adapt to your available equipment and facilities. While power meters and heart rate monitors enhance training precision, they're not required to start. Many successful athletes begin with basic equipment and upgrade as they progress.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item bg-surface rounded-lg">
+                    <button class="faq-question w-full text-left p-6 font-semibold text-text-primary hover:text-primary transition-colors" onclick="toggleFAQ(this)">
+                        What's included in the coaching service?
+                        <svg class="faq-icon float-right w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer hidden px-6 pb-6 text-text-secondary">
+                        <p>Full coaching includes: personalized TrainingPeaks plans, daily workout adjustments, weekly planning calls, race strategy development, nutrition guidance, technique analysis, performance tracking, and unlimited email/text support. Everything needed for success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="get-started" class="py-20 bg-surface">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="urgency-badge mb-6 inline-block">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"/>
+                </svg>
+                Limited Coaching Spots Available
+            </div>
+            
+            <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+                Ready to Transform Your Performance?
+            </h2>
+            <p class="text-xl text-text-secondary mb-8">
+                Join the athletes who've already discovered the power of science-based, personalized coaching.
+            </p>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg mb-8">
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-text-primary mb-2">Free Assessment</h3>
+                        <p class="text-sm text-text-secondary">Discover your personalized training approach</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-text-primary mb-2">Coach Consultation</h3>
+                        <p class="text-sm text-text-secondary">Discuss your goals and training approach</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-text-primary mb-2">Start Training</h3>
+                        <p class="text-sm text-text-secondary">Begin your personalized coaching journey</p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="#assessment" class="btn-primary text-lg px-8 py-4 animate-pulse-accent bg-[rgba(239,13,61,1)]">
+                        Get Your Free Assessment
+                    </a>
+                </div>
+            </div>
+            
+            <p class="text-sm text-text-muted">
+                No spam, no pressure. Just personalized insights to help you achieve your goals.
+            </p>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer class="text-white py-16 bg-[rgba(14,36,237,1)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Company Info -->
+            <div>
+                <div class="flex items-center mb-6">
+                    <img src="/assets/images/photo_Logo_7d_Trainign-1757015790518.jpg" alt="7D TRAINING Logo" class="h-8 w-auto mr-3">
+                    <span class="text-xl font-bold">7D TRAINING </span>
+                </div>
+                <p class="text-blue-200 mb-6">
+                    Science-based triathlon and endurance coaching that delivers measurable results for athletes of all levels.
+                </p>
+                <div class="trust-badge bg-white/10 border-white/20 text-white">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                    </svg>
+                    Certified Coach
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h3 class="font-semibold mb-6">Services</h3>
+                <ul class="space-y-3 text-blue-200">
+                    <li>Triathlon Coaching</li>
+                    <li>Ocean Man Swimming</li>
+                    <li>Marathon Training</li>
+                    <li>Cycling Coaching</li>
+                    <li>Ultramarathon Prep</li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="font-semibold mb-6">Contact</h3>
+                <div class="space-y-3 text-blue-200">
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        <a href="mailto:coaching@7dtraining.com" class="hover:text-white transition-colors">coaching@7dtraining.com</a>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                        <a href="tel:+573134190663" class="hover:text-white transition-colors">+57 3134190663</a>
+                    </div>
+                    <div class="text-sm">
+                        <div class="font-semibold mb-2">Privacy Assurance</div>
+                        <p>Your training data and personal information are protected with enterprise-level security.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-white/20 mt-12 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-blue-200 text-sm mb-4 md:mb-0">
+                    &#xa9; 2026 7D TRAINING coaching. All Rights Reserved.
+                </div>
+                <div class="flex space-x-6 text-sm text-blue-200">
+                    <a href="/pages/privacy_policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Floating Testimonial Sidebar (Mobile Hidden) -->
+    <div class="fixed right-4 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block" id="floating-testimonials">
+        <div class="bg-white rounded-lg shadow-lg p-4 max-w-xs testimonial-card">
+            <div class="flex items-center mb-3">
+                <img id="floating-testimonial-photo" src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100" alt="Sarah M." class="w-8 h-8 rounded-full mr-3 object-cover" />
+                <div class="text-xs">
+                    <div class="font-semibold">Sarah M.</div>
+                    <div class="text-text-muted">Just PR'd!</div>
+                </div>
+            </div>
+            <p class="text-xs text-text-secondary">"Improved my 70.3 time by 15 minutes with personalized coaching!"</p>
+        </div>
+    </div>
+
+    <!-- Sticky Bottom CTA (Mobile) -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-40 lg:hidden" id="sticky-cta" style="padding: 0.75rem 1rem;">
+        <a href="#assessment" class="btn-primary w-full text-center py-3 block">
+            Free Assessment
+        </a>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a id="whatsapp-float"
+       href="https://wa.me/573134190663?text=Hi%20Diego%2C%20I%27m%20interested%20in%20triathlon%20coaching%20with%207D%20Training."
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat on WhatsApp"
+       style="position:fixed; bottom:6rem; right:1.25rem; z-index:9999; width:3.5rem; height:3.5rem; border-radius:9999px; background-color:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 25px rgba(0,0,0,0.25);">
+        <svg width="32" height="32" fill="#ffffff" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+    <style>
+        @media (min-width: 1024px) {
+            #whatsapp-float { bottom: 1.5rem !important; right: 1.5rem !important; }
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        // Assessment Form Logic
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function nextStep() {
+            if (validateCurrentStep()) {
+                if (currentStep < totalSteps) {
+                    document.getElementById(`step-${currentStep}`).classList.add('hidden');
+                    currentStep++;
+                    document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+                    updateProgress();
+                    updateButtons();
+                }
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 1) {
+                document.getElementById(`step-${currentStep}`).classList.add('hidden');
+                currentStep--;
+                document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+                updateProgress();
+                updateButtons();
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = `Step ${currentStep} of ${totalSteps}`;
+        }
+
+        function updateButtons() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const submitBtn = document.getElementById('submit-btn');
+
+            if (currentStep === 1) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+
+            if (currentStep === totalSteps) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+        }
+
+        function validateCurrentStep() {
+            const step = document.getElementById(`step-${currentStep}`);
+            const requiredInputs = step.querySelectorAll('input[required]');
+            const radioGroups = step.querySelectorAll('input[type="radio"]');
+            
+            // Check required fields
+            for (let input of requiredInputs) {
+                if (!input.value.trim()) {
+                    input.focus();
+                    return false;
+                }
+            }
+
+            // Check radio button groups
+            if (radioGroups.length > 0) {
+                const groupNames = [...new Set([...radioGroups].map(r => r.name))];
+                for (let groupName of groupNames) {
+                    const checked = step.querySelector(`input[name="${groupName}"]:checked`);
+                    if (!checked) {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        // Assessment option selection
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.assessment-option')) {
+                const option = e.target.closest('.assessment-option');
+                const input = option.querySelector('input');
+                const container = option.querySelector('div');
+                
+                if (input.type === 'radio') {
+                    // Clear other selections in the same group
+                    const groupName = input.name;
+                    document.querySelectorAll(`input[name="${groupName}"]`).forEach(radio => {
+                        radio.closest('.assessment-option').querySelector('div').classList.remove('border-primary', 'bg-primary-50');
+                        radio.closest('.assessment-option').querySelector('div').classList.add('border-gray-200');
+                    });
+                    
+                    input.checked = true;
+                    container.classList.remove('border-gray-200');
+                    container.classList.add('border-primary', 'bg-primary-50');
+                } else if (input.type === 'checkbox') {
+                    input.checked = !input.checked;
+                    if (input.checked) {
+                        container.classList.remove('border-gray-200');
+                        container.classList.add('border-primary', 'bg-primary-50');
+                    } else {
+                        container.classList.remove('border-primary', 'bg-primary-50');
+                        container.classList.add('border-gray-200');
+                    }
+                }
+            }
+        });
+
+        // Assessment form submission
+        // 1) Replace FORMSPREE_ENDPOINT below with your Formspree form URL (https://formspree.io)
+        //    Example: 'https://formspree.io/f/xxxxxxxx'
+        // 2) In Formspree settings, enable auto-reply so athletes get a confirmation email
+        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+        const experienceInsights = {
+            beginner: 'Build a durable aerobic base first. We will emphasize consistency, technique, and injury prevention before intensity.',
+            intermediate: 'You are ready for structured periodization. We will identify limiters, balance load/recovery, and target race-specific gains.',
+            advanced: 'Focus shifts to optimization: sharper intensity distribution, race pacing, and data-driven adjustments from TrainingPeaks.',
+            elite: 'We will refine peaking, race execution, and marginal gains across swim, bike, and run while protecting recovery quality.'
+        };
+
+        const timeInsights = {
+            '5-7': 'With 5–7 hours/week, expect 3–5 quality sessions prioritizing key workouts and smart recovery days.',
+            '8-12': 'With 8–12 hours/week, we can balance all three disciplines well—ideal for Olympic and 70.3 build phases.',
+            '13-18': 'With 13–18 hours/week, long sessions and race-specific blocks become sustainable for Ironman-level goals.',
+            '19+': 'With 19+ hours/week, we will carefully manage intensity and recovery so volume converts into performance, not fatigue.'
+        };
+
+        const goalLabels = {
+            triathlon: 'Triathlon',
+            swimming: 'Ocean Man / Open Water',
+            cycling: 'Cycling / MTB',
+            running: 'Marathon / Ultra'
+        };
+
+        function buildAssessmentSummary(form) {
+            const experience = form.querySelector('input[name="experience"]:checked')?.value || 'intermediate';
+            const time = form.querySelector('input[name="time"]:checked')?.value || '8-12';
+            const goals = [...form.querySelectorAll('input[name="goals"]:checked')].map(g => g.value);
+            const firstName = form.querySelector('input[name="firstName"]')?.value?.trim() || 'Athlete';
+
+            document.getElementById('results-intro').textContent =
+                `Thanks ${firstName} — based on your answers, here is your personalized starting point.`;
+            document.getElementById('result-experience').textContent = experienceInsights[experience] || experienceInsights.intermediate;
+            document.getElementById('result-time').textContent = timeInsights[time] || timeInsights['8-12'];
+            document.getElementById('result-goals').textContent = goals.length
+                ? `Primary focus: ${goals.map(g => goalLabels[g] || g).join(', ')}. Your plan will prioritize these disciplines while keeping supporting fitness balanced.`
+                : 'We will clarify your primary race goals on our follow-up call and structure the plan around them.';
+        }
+
+        document.getElementById('assessment-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            if (!validateCurrentStep()) return;
+
+            const form = this;
+            const submitBtn = document.getElementById('submit-btn');
+            const originalLabel = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            const formData = new FormData(form);
+            const goals = formData.getAll('goals');
+            formData.set('goals', goals.join(', ') || 'Not specified');
+            formData.set('_subject', 'New 7D Training Assessment Lead');
+            formData.set('_replyto', formData.get('email'));
+
+            buildAssessmentSummary(form);
+
+            let submitted = false;
+            if (FORMSPREE_ENDPOINT && !FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
+                try {
+                    const response = await fetch(FORMSPREE_ENDPOINT, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    submitted = response.ok;
+                } catch (err) {
+                    console.error('Assessment submit failed:', err);
+                }
+            } else {
+                console.warn('Formspree endpoint not configured. Lead data logged locally only.', Object.fromEntries(formData));
+                submitted = true; // still show results during setup
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalLabel;
+
+            if (submitted) {
+                form.classList.add('hidden');
+                document.getElementById('assessment-results').classList.remove('hidden');
+                document.getElementById('assessment-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                alert('We could not send your assessment right now. Please try again or WhatsApp us at +57 3134190663.');
+            }
+        });
+
+        // Coach photo carousel
+        let coachSlideIndex = 0;
+        const coachSlides = document.querySelectorAll('.coach-carousel-slide');
+        const coachDots = document.querySelectorAll('.coach-carousel-dot');
+
+        function showCoachSlide(index) {
+            coachSlideIndex = index;
+            coachSlides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+            coachDots.forEach((dot, i) => {
+                dot.style.opacity = i === index ? '1' : '0.5';
+            });
+        }
+
+        coachDots.forEach((dot, i) => {
+            dot.addEventListener('click', () => showCoachSlide(i));
+        });
+
+        setInterval(() => {
+            if (coachSlides.length) {
+                showCoachSlide((coachSlideIndex + 1) % coachSlides.length);
+            }
+        }, 4500);
+
+        // FAQ functionality
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function searchFAQ() {
+            const searchTerm = document.getElementById('faq-search').value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = searchTerm ? 'none' : 'block';
+                }
+            });
+        }
+
+        // Testimonial carousel
+        let testimonialIndex = 0;
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+
+        function nextTestimonial() {
+            testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
+            updateTestimonialCarousel();
+        }
+
+        function previousTestimonial() {
+            testimonialIndex = (testimonialIndex - 1 + testimonialSlides.length) % testimonialSlides.length;
+            updateTestimonialCarousel();
+        }
+
+        function updateTestimonialCarousel() {
+            const track = document.getElementById('testimonial-track');
+            track.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+        }
+
+        function showTestimonials() {
+            document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Auto-rotate testimonials
+        setInterval(nextTestimonial, 8000);
+
+        // Mobile menu: full-screen panel with every landing section plus Project Podium
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const siteNav = document.getElementById('site-nav');
+
+        function syncNavHeight() {
+            if (!siteNav) return;
+            const bar = siteNav.querySelector('.site-nav-inner');
+            if (bar) {
+                document.documentElement.style.setProperty('--site-nav-height', bar.offsetHeight + 'px');
+            }
+        }
+
+        function preventMenuBackgroundScroll(event) {
+            const scroll = mobileMenu && mobileMenu.querySelector('.site-nav-panel-scroll');
+            if (scroll && scroll.contains(event.target)) return;
+            event.preventDefault();
+        }
+
+        function setMenuOpen(open) {
+            if (!mobileMenu || !mobileMenuToggle) return;
+            const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+            if (open === isOpen) return;
+
+            mobileMenu.hidden = !open;
+            mobileMenuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            mobileMenuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            document.body.classList.toggle('nav-menu-open', open);
+
+            if (open) {
+                mobileMenu.querySelector('.site-nav-panel-scroll').scrollTop = 0;
+                document.addEventListener('touchmove', preventMenuBackgroundScroll, { passive: false });
+            } else {
+                document.removeEventListener('touchmove', preventMenuBackgroundScroll);
+            }
+        }
+
+            if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function () {
+                const open = mobileMenuToggle.getAttribute('aria-expanded') !== 'true';
+                setMenuOpen(open);
+            });
+
+            mobileMenu.querySelectorAll('a[target="_blank"]').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    setMenuOpen(false);
+                });
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') setMenuOpen(false);
+            });
+
+            const desktopNavQuery = window.matchMedia('(min-width: 1280px)');
+            const closeOnDesktop = function (event) {
+                if (event.matches) setMenuOpen(false);
+            };
+            if (desktopNavQuery.addEventListener) {
+                desktopNavQuery.addEventListener('change', closeOnDesktop);
+            } else if (desktopNavQuery.addListener) {
+                desktopNavQuery.addListener(closeOnDesktop);
+            }
+        }
+
+        syncNavHeight();
+        window.addEventListener('resize', syncNavHeight);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (!target) return;
+                e.preventDefault();
+                setMenuOpen(false);
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Floating testimonial rotation
+        const floatingTestimonials = [
+            {
+                name: "Sarah M.",
+                achievement: "Just PR'd!",
+                quote: "Improved my 70.3 time by 15 minutes!",
+                photo: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100"
+            },
+            {
+                name: "Mike T.",
+                achievement: "Ironman finisher!",
+                quote: "Remote coaching fit perfectly into my travel schedule!",
+                photo: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100"
+            },
+            {
+                name: "Lisa R.",
+                achievement: "Race ready!",
+                quote: "Plans adapted around my shift work schedule!",
+                photo: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=100"
+            }
+        ];
+
+        let floatingIndex = 0;
+        function rotateFloatingTestimonial() {
+            const testimonial = floatingTestimonials[floatingIndex];
+            const container = document.getElementById('floating-testimonials');
+            if (container) {
+                container.querySelector('.font-semibold').textContent = testimonial.name;
+                container.querySelector('.text-text-muted').textContent = testimonial.achievement;
+                container.querySelector('.text-text-secondary').textContent = `"${testimonial.quote}"`;
+                const photo = document.getElementById('floating-testimonial-photo');
+                if (photo) {
+                    photo.src = testimonial.photo;
+                    photo.alt = testimonial.name;
+                }
+                floatingIndex = (floatingIndex + 1) % floatingTestimonials.length;
+            }
+        }
+
+        // Rotate floating testimonial every 5 seconds
+        setInterval(rotateFloatingTestimonial, 5000);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+            updateButtons();
+            showCoachSlide(0);
+        });
+    </script>
 <script id="dhws-dataInjector" src="/dhws-data-injector.js"></script>
 </body>
 </html>
