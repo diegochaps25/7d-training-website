@@ -13,7 +13,7 @@
   "scripts": {
     "build:css": "npx @dhiwise/component-tagger && npx tailwindcss -i ./css/tailwind.css -o ./public/css/main.css",
     "watch:css": "npx @dhiwise/component-tagger && npx tailwindcss -i ./css/tailwind.css -o ./public/css/main.css --watch",
-    "serve": "live-server public --port=5173 --open=/pages/landing_page.html --watch=public",
+    "serve": "live-server public --port=5173 --open=/ --watch=public",
     "dev": "concurrently -k \"npm run watch:css\" \"npm run serve\""
   },
   "author": "",
